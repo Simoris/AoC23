@@ -7,7 +7,7 @@ namespace AoC23;
 
 public class Day1
 {
-    private ITestOutputHelper _testOutputHelper;
+    private readonly ITestOutputHelper _testOutputHelper;
 
     private readonly (int Number, string StringRepresentation)[] Numbers = new[]
     {
