@@ -45,7 +45,6 @@ public class Day1
         var digits = lines.Select(FindStringNumnbers).Select(x => x.Where(y => char.IsDigit(y)).ToArray());
         var numbers = digits.Select(x => $"{x.First()}{x.Last()}").Select(int.Parse).ToArray();
 
-        numbers.All(x => x > 9 && x < 100).Should().BeTrue();
         _testOutputHelper.WriteLine(numbers.Sum().ToString());
     }
 

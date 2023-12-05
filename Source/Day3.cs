@@ -74,7 +74,7 @@ public class Day3
 
         var width = matrix[0].Length;
         var height = matrix.Length;
-        List<StarNumber> partNumbers = new();
+        List<StarNumber> starNumbers = new();
         for (var i = 0; i < height; i++)
         {
             for (var j = 0; j < width; j++)
@@ -84,11 +84,11 @@ public class Day3
 
                 var oldJ = j;
                 while (j + 1 < width && char.IsDigit(matrix[i][j + 1])) j++;
-                var number = int.Parse(matrix[i][oldJ..(j + 1)]);
-                partNumbers.Add(new(number, SearchStarPosition(i, oldJ, j)));
+                var number = int.Parse(matrix[i].AsSpan()[oldJ..(j + 1)]);
+                starNumbers.Add(new(number, SearchStarPosition(i, oldJ, j)));
             }
         }
-        return partNumbers.ToArray();
+        return starNumbers.ToArray();
 
         (int X, int Y)? SearchStarPosition(int i, int j0, int j1)
         {
