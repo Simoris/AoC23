@@ -1,4 +1,5 @@
-﻿using Xunit;
+﻿using AoC23.Utils;
+using Xunit;
 using Xunit.Abstractions;
 
 namespace AoC23;
@@ -23,7 +24,7 @@ public class Day5
         _testOutputHelper.WriteLine(locations.Min().ToString());
     }
 
-    [Fact]
+    [Fact(Skip = "Slow")]
     public async Task Task2()
     {
         var farmingData = ReadInputs();
@@ -54,6 +55,25 @@ public class Day5
             place = mapping.Destination;
         }
         return number;
+    }
+
+    [Fact]
+    public void Task2Optimized()
+    {
+        var farmingData = ReadInputs();
+        var rangeSet = new RangeSet(farmingData.Seeds.Chunk(2).Select(x => new RangeSet.Range(x[0], x[1])).ToArray());
+
+        var place = "seed";
+        while (place != "location")
+        {
+            var mappings = farmingData.MappingsBySource[place].Select(x => new RangeSet.Mapping(x.SourceStart, x.Length, x.DestinationStart)).ToArray();
+
+            rangeSet = rangeSet.ApplyMappings(mappings);
+
+            place = farmingData.MappingsBySource[place].First().Destination;
+        }
+
+        _testOutputHelper.WriteLine(rangeSet.Min().ToString());
     }
 
     private static FarmingData ReadInputs()
