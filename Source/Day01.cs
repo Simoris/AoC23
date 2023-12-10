@@ -5,7 +5,7 @@ using Xunit.Abstractions;
 
 namespace AoC23;
 
-public class Day1
+public class Day01
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
@@ -22,7 +22,7 @@ public class Day1
         (9, "nine")
     };
 
-    public Day1(ITestOutputHelper testOutputHelper)
+    public Day01(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
@@ -64,6 +64,6 @@ public class Day1
 
     private string[] ReadInputs()
     {
-        return File.ReadAllLines("Inputs/Day1.txt");
+        return File.ReadAllLines("Inputs/Day01.txt");
     }
 }

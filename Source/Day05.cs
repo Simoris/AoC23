@@ -4,11 +4,11 @@ using Xunit.Abstractions;
 
 namespace AoC23;
 
-public class Day5
+public class Day05
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public Day5(ITestOutputHelper testOutputHelper)
+    public Day05(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
@@ -78,7 +78,7 @@ public class Day5
 
     private static FarmingData ReadInputs()
     {
-        var lines = File.ReadAllLines("Inputs/Day5.txt");
+        var lines = File.ReadAllLines("Inputs/Day05.txt");
         var seeds = lines[0].Split(' ').Skip(1).Select(long.Parse).ToArray();
 
         var maps = new List<Mapping>();

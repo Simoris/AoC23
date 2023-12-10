@@ -3,11 +3,11 @@ using Xunit.Abstractions;
 
 namespace AoC23;
 
-public class Day2
+public class Day02
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public Day2(ITestOutputHelper testOutputHelper)
+    public Day02(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
@@ -35,7 +35,7 @@ public class Day2
 
     private Game[] ReadInputs()
     {
-        var lines = File.ReadAllLines("Inputs/Day2.txt");
+        var lines = File.ReadAllLines("Inputs/Day02.txt");
 
         return lines.Select(ParseGame).ToArray();
 

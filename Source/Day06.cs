@@ -3,11 +3,11 @@ using Xunit.Abstractions;
 
 namespace AoC23;
 
-public class Day6
+public class Day06
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public Day6(ITestOutputHelper testOutputHelper)
+    public Day06(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
@@ -45,7 +45,7 @@ public class Day6
 
     private Race[] ReadInputs()
     {
-        var lines = File.ReadAllLines("Inputs/Day6.txt");
+        var lines = File.ReadAllLines("Inputs/Day06.txt");
         var times = lines[0].Split(' ', StringSplitOptions.RemoveEmptyEntries).Skip(1).Select(long.Parse);
         var records = lines[1].Split(' ', StringSplitOptions.RemoveEmptyEntries).Skip(1).Select(long.Parse);
         return times.Zip(records).Select(x => new Race(x.First, x.Second)).ToArray();

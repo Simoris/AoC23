@@ -5,11 +5,11 @@ using Xunit.Abstractions;
 
 namespace AoC23;
 
-public class Day8
+public class Day08
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public Day8(ITestOutputHelper testOutputHelper)
+    public Day08(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
@@ -148,7 +148,7 @@ public class Day8
 
     private (IEnumerable<Func<NextPositions, string>> Strategy, Dictionary<string, NextPositions> Positions) ReadInputs()
     {
-        var lines = File.ReadAllLines("Inputs/Day8.txt");
+        var lines = File.ReadAllLines("Inputs/Day08.txt");
         var strategy = lines[0];
         IEnumerable<Func<NextPositions, string>> NextMove()
         {

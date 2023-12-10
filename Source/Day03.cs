@@ -3,11 +3,11 @@ using Xunit.Abstractions;
 
 namespace AoC23;
 
-public class Day3
+public class Day03
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public Day3(ITestOutputHelper testOutputHelper)
+    public Day03(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
@@ -34,7 +34,7 @@ public class Day3
 
     private static PartNumber[] ReadInputs()
     {
-        var matrix = File.ReadAllLines("Inputs/Day3.txt").Select(x => x.ToCharArray()).ToArray();
+        var matrix = File.ReadAllLines("Inputs/Day03.txt").Select(x => x.ToCharArray()).ToArray();
         var dottedMatrix = matrix.Select(x => x.Select(y => char.IsDigit(y) ? '.' : y).ToArray()).ToArray();
 
         var width = matrix[0].Length;
@@ -69,7 +69,7 @@ public class Day3
 
     private static StarNumber[] ReadInputs2()
     {
-        var matrix = File.ReadAllLines("Inputs/Day3.txt").Select(x => x.ToCharArray()).ToArray();
+        var matrix = File.ReadAllLines("Inputs/Day03.txt").Select(x => x.ToCharArray()).ToArray();
         var dottedMatrix = matrix.Select(x => x.Select(y => char.IsDigit(y) ? '.' : y).ToArray()).ToArray();
 
         var width = matrix[0].Length;

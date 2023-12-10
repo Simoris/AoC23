@@ -3,11 +3,11 @@ using Xunit.Abstractions;
 
 namespace AoC23;
 
-public class Day4
+public class Day04
 {
     private readonly ITestOutputHelper _testOutputHelper;
 
-    public Day4(ITestOutputHelper testOutputHelper)
+    public Day04(ITestOutputHelper testOutputHelper)
     {
         _testOutputHelper = testOutputHelper;
     }
@@ -55,7 +55,7 @@ public class Day4
 
     private static Card[] ReadInputs()
     {
-        var lines = File.ReadAllLines("Inputs/Day4.txt");
+        var lines = File.ReadAllLines("Inputs/Day04.txt");
         return lines.Select(x =>
         {
             var bits = x.Split(new[] { "Card", " ", ":", "|" }, StringSplitOptions.RemoveEmptyEntries);
