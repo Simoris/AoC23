@@ -17,4 +17,14 @@ public static class MathUtils
     {
         return (a / GCF(a, b)) * b;
     }
+
+    public static int NCR(int n, int k)
+    {
+        int result = 1;
+        for (var i = n; i > n - k; i--)
+            result *= i;
+        for (var i = 1; i <= k; i++)
+            result /= i;
+        return result;
+    }
 }
